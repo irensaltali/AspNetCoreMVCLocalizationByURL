@@ -81,10 +81,10 @@ namespace AspNetCoreMVCLocalizationByURL
                 options.ConstraintMap.Add("culture", typeof(LanguageRouteConstraint));
             });
 
-            services.Configure<MvcOptions>(options =>
-            {
-                options.Filters.Add(new RequireHttpsAttribute());
-            });
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new RequireHttpsAttribute());
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -116,10 +116,10 @@ namespace AspNetCoreMVCLocalizationByURL
                       defaults: new { controller = "Home", action = "RedirectToDefaultCulture", culture = "en" });
             });
 
-            var options = new RewriteOptions()
-                .AddRedirectToHttps();
+            //var options = new RewriteOptions()
+            //    .AddRedirectToHttps();
 
-            app.UseRewriter(options);
+            //app.UseRewriter(options);
         }
 
         public class LanguageRouteConstraint : IRouteConstraint
